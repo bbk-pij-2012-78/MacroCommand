@@ -7,21 +7,22 @@ import org.junit.Test;
 
 import code.CompositeDisplayALetter;
 import code.DisplayALetter;
-import code.DisplayTheLetterA;
-import code.DisplayTheLetterB;
-import code.DisplayTheLetterC;
+import code.DisplayLetterFactory;
 
 /**
  * @author oded
  *
  */
 public class CompositeDisplayALetterTest {
-
+	
 	@Test
 	public void test() {
-		DisplayALetter a = new DisplayTheLetterA();
-		DisplayALetter b = new DisplayTheLetterB();
-		DisplayALetter c = new DisplayTheLetterC();
+		
+		DisplayLetterFactory factory = new DisplayLetterFactory();
+		
+		DisplayALetter a = factory.Display("A");
+		DisplayALetter b = factory.Display("B");
+		DisplayALetter c = factory.Display("C");
 		
 		CompositeDisplayALetter top = new CompositeDisplayALetter();
 		CompositeDisplayALetter bottomLeft = new CompositeDisplayALetter();
